@@ -8,6 +8,7 @@ class LatihanReact extends React.Component{
                 <div>
                 <ClassComponent nama="rizal"/>
                 <FunctionalComponent nama="rizal"/>
+               
                 </div>
 		)
 	}

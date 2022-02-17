@@ -1,9 +1,10 @@
- import LatihanReact from "./LatihanReact";   
-
+ import Portofolio from "./LatihanReact/Portofolio"; 
+ 
 function App() {
   return (
     <div className="App">
-        <LatihanReact />
+        <Portofolio />
+       
     </div>
   );
 }
