@@ -1,9 +1,9 @@
- import Portofolio from "./LatihanReact/Portofolio"; 
- 
+import Form from "./LatihanReact/Form";
+
 function App() {
   return (
     <div className="App">
-        <Portofolio />
+      <Form />
        
     </div>
   );
