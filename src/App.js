@@ -1,9 +1,10 @@
-import Form from "./LatihanReact/Form";
+
+import PortalBerita from "./LatihanReact/PortalBerita";
 
 function App() {
   return (
     <div className="App">
-      <Form />
+      <PortalBerita />
        
     </div>
   );

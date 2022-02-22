@@ -1,4 +1,6 @@
 import React from "react";
+import $ from "jquery";
+import { click } from "@testing-library/user-event/dist/click";
 
 class ClassComponent extends React.Component{
 	state = {
@@ -9,6 +11,14 @@ class ClassComponent extends React.Component{
 		if(this.state.value > 0){
 		this.setState({value: this.state.value - 1});
 	}
+	}
+
+	componentDidMount(){
+		$(".klik").click(function(){
+			console.log($(".input").val())
+		})
+		
+		
 	}
 	handlePlus = () => {
 		this.setState({value: this.state.value + 1});
@@ -21,7 +31,12 @@ class ClassComponent extends React.Component{
              <h2>Hello  {this.props.nama}</h2>
              <button onClick={this.handleMinus}>-</button>
              <span> {this.state.value} </span>
-              <button onClick={this.handlePlus}>+</button>
+              <button onClick={this.handlePlus}>+</button> <br />
+			  <form>
+			  <input type="text" className="input"  defaultValue="rizal"/>
+				<button className="klik" type="submit">klik</button>
+			  </form>
+			  
 			</div>
 
 		)
