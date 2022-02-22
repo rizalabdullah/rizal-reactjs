@@ -10,15 +10,19 @@ state ={
 }    
    
 componentDidMount(){
-   
+    $(".klik").click((e) => {
+        e.preventDefault()
   
-       
-    fetch(`https://newsapi.org/v2/top-headlines?country=id&apiKey=a4c6db0fc6814847adf5743f510599a6`)
+      
+    
+let input= $(".input").val();
+
+    fetch(`https://newsapi.org/v2/top-headlines?q=${input}&country=id&apiKey=a4c6db0fc6814847adf5743f510599a6`)
   .then(response => response.json())
   .then((data) => {
       this.setState({article: data.articles})
 
-  
+  })
         
  
    
