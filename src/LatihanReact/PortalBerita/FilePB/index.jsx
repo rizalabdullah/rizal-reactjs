@@ -10,18 +10,15 @@ state ={
 }    
    
 componentDidMount(){
-    $(".klik").click((e) => {
-        e.preventDefault()
+   
   
-        console.log($(".input").val());
-    
-let input= $(".input").val()
-    fetch(`https://newsapi.org/v2/top-headlines?q=${input}&country=id&apiKey=a4c6db0fc6814847adf5743f510599a6`)
+       
+    fetch(`https://newsapi.org/v2/top-headlines?country=id&apiKey=a4c6db0fc6814847adf5743f510599a6`)
   .then(response => response.json())
   .then((data) => {
       this.setState({article: data.articles})
 
-  })
+  
         
  
    
@@ -38,7 +35,7 @@ let input= $(".input").val()
                         <button className="btn btn-primary klik" type="submit" id="submit">Search</button>
                         
                     </form>
-                    < Article article={this.state.article} />
+                   { this.state.article && < Article article={this.state.article} /> }
              
 
             </div>
