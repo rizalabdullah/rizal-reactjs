@@ -1,57 +1,31 @@
 import React from "react";
-import $ from "jquery";
-import { click } from "@testing-library/user-event/dist/click";
-
 
 class ClassComponent extends React.Component{
- constructor(props) {
-    super(props);
-    this.state = {
-      items: []
-    };
-  }
+	state = {
+		value: 0
+	}
 
-  componentDidMount() {
-    fetch("https://newsapi.org/v2/top-headlines?country=id&apiKey=a4c6db0fc6814847adf5743f510599a6")
-      .then(res => res.json())
-      .then(
-        (data) => {
-          this.setState({
-            isLoaded: true,
-            items: data.articles
-			
-          });
-		  console.log(data.articles)
-        },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error
-          });
-        }
-      )
-  }
+	handleMinus = () => {
+		if(this.state.value > 0){
+		this.setState({value: this.state.value - 1});
+	}
+	}
+	handlePlus = () => {
+		this.setState({value: this.state.value + 1});
+	}
 
-  render() {
-    const {items } = this.state;
-  
-      return (
-        <ul>
-          {items.map((item,i) => {
-        return(    <li key={i}>
-              {item.title}
-            </li> )
-          })
-		 
-		
-		} 
-        </ul>   
-      );
-   
-  }
+	render(){
+		return(
+			<div>
+             <h1> Membuat komponen dengan class komponen </h1>
+             <h2>Hello  {this.props.nama}</h2>
+             <button onClick={this.handleMinus}>-</button>
+             <span> {this.state.value} </span>
+              <button onClick={this.handlePlus}>+</button>
+			</div>
+
+		)
+	}
 }
 
 export default ClassComponent;

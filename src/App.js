@@ -1,9 +1,9 @@
-import LatihanReact from "./LatihanReact/";
+import PortalBerita from "./LatihanReact/PortalBerita";
 
 function App() {
   return (
     <div className="App">
-      <LatihanReact />
+      <PortalBerita />
        
     </div>
   );
