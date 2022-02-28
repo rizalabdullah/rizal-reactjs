@@ -1,10 +1,10 @@
-import PortalBerita from "./LatihanReact/PortalBerita";
+import Hook from "./LatihanReact/Hook";
 
 function App() {
   return (
     <div className="App">
-      <PortalBerita />
-       
+      <Hook />
+     
     </div>
   );
 }
