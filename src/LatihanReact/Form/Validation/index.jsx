@@ -73,7 +73,7 @@ class Validation extends React.Component{
                                 this.setState({email:value})}
                             }/> 
                         <label>Password</label> <br />
-                            <Input type="text" name="password"  onChange={(value) => {
+                            <Input type="password" name="password"  onChange={(value) => {
                                 this.setState({password:value})}
                             }/> <br />
                         <button type="submit" >Login </button>

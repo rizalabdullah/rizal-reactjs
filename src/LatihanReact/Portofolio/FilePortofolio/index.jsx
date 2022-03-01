@@ -3,6 +3,7 @@ import "./css/style.css";
 import styled from "styled-components";
 import gambar from "./img/b4.jpg";
 import gambar1 from "./img/bg2.png";
+import {  Outlet,Link } from "react-router-dom";
 
 const Bg = styled.div`
     background-image: url(${gambar1});
@@ -22,6 +23,7 @@ class FilePortofolio extends React.Component{
     render(){
         return(
             <div>
+                <>
                 <Bg>
                 <nav className="navbar navbar-expand-sm bg-danger navbar-dark ">
                     <div className="container-fluid">
@@ -43,7 +45,7 @@ class FilePortofolio extends React.Component{
                 <div className="container-fluid p-5 text-center">
                     <h1 className=" pt-5 text-danger">MY PORTOFOLIO</h1>
                     <h2 className="text-white" id="rizal">Rizal Abdullah</h2>
-                    <button className="btn1 btn-danger text-warning pl-4 pr-4 mt-5 border-3 border-light"><a href="#"> Linkedin Profile </a></button>
+                    <button className="btn1 btn-danger text-warning pl-4 pr-4 mt-5 border-3 border-light"><Link to="/"> Kembali ke komponen </Link></button>
                 </div>	
             </Gambar>
 
@@ -109,6 +111,8 @@ class FilePortofolio extends React.Component{
                 </div>
 
              </Bg>
+                <Outlet />
+             </>
         </div>
         )
     }
